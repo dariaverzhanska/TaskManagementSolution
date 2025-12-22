@@ -1,18 +1,16 @@
 ﻿using DAL.Entities;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace DAL.Repositories
 {
-    public class TaskRepository
+    public class MyTaskRepository
     {
-        private List<Task> tasks = new List<Task>();
+        private List<MyTask> tasks = new List<MyTask>();
 
-        public List<Task> GetAllTasks() => tasks;
+        public List<MyTask> GetAllTasks() => tasks;
 
-        public void AddTask(Task task) => tasks.Add(task);
+        public void AddTask(MyTask task) => tasks.Add(task);
 
-        public void UpdateTask(Task task)
+        public void UpdateTask(MyTask task)
         {
             var existing = tasks.FirstOrDefault(t => t.Id == task.Id);
             if (existing != null)

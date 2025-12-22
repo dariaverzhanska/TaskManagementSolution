@@ -13,7 +13,7 @@ namespace BLL.Services
 
         public List<Employee> GetAllEmployees() => repository.GetAllEmployees();
 
-        public Employee GetEmployeeById(int id)
+        public Employee? GetEmployeeById(int id)
             => repository.GetAllEmployees().FirstOrDefault(e => e.Id == id);
     }
 }

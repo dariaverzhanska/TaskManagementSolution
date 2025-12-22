@@ -8,16 +8,26 @@ namespace PL
     {
         static void Main(string[] args)
         {
-            TaskService taskService = new TaskService();
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+            MyTaskService taskService = new MyTaskService();
             EmployeeService employeeService = new EmployeeService();
 
             Employee emp = new Employee { Id = 1, Name = "Дар'я", Position = "Менеджер" };
             employeeService.AddEmployee(emp);
 
-            Task task = new Task { Id = 1, Title = "Зробити звіт", AssignedTo = 1, Status = "Нова" };
+            MyTask task = new MyTask
+            {
+                Id = 1,
+                Title = "Зробити звіт",
+                Description = "Підготувати щомісячний звіт",
+                AssignedTo = 1,
+                Status = "Нова"
+            };
             taskService.CreateTask(task);
 
             Console.WriteLine("Задачу успішно додано!");
+            Console.ReadLine(); // щоб консоль не закрилася
         }
     }
 }

@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace BLL.Services
 {
-    public class TaskService
+    public class MyTaskService
     {
-        private TaskRepository repository = new TaskRepository();
+        private MyTaskRepository repository = new MyTaskRepository();
 
-        public void CreateTask(Task task) => repository.AddTask(task);
+        public void CreateTask(MyTask task) => repository.AddTask(task);
 
         public void CompleteTask(int id)
         {
@@ -17,7 +17,7 @@ namespace BLL.Services
             if (task != null) task.Status = "Completed";
         }
 
-        public List<Task> GetTasksByEmployee(int employeeId)
+        public List<MyTask> GetTasksByEmployee(int employeeId)
             => repository.GetAllTasks().Where(t => t.AssignedTo == employeeId).ToList();
     }
 }
