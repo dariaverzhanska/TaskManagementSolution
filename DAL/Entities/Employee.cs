@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DAL.Entities
+﻿namespace DAL.Entities
 {
-    internal class Class1
+    public class Employee
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Position { get; set; }
     }
 }
