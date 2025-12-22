@@ -1,3 +1,9 @@
 <Solution>
+  <Folder Name="/Элементы решения/">
+    <File Path=".gitignore" />
+  </Folder>
+  <Project Path="BLL/BLL.csproj" />
+  <Project Path="DAL/DAL.csproj" />
+  <Project Path="PL/PL.csproj" />
   <Project Path="TaskManagementSolution/TaskManagementSolution.csproj" />
 </Solution>

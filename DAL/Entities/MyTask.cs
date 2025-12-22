@@ -1,6 +1,6 @@
 ﻿namespace DAL.Entities
 {
-    public class Task
+    public class MyTask
     {
         public int Id { get; set; }
         public string Title { get; set; }
