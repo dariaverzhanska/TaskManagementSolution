@@ -1,10 +1,19 @@
-﻿using System;
+﻿using DAL.Entities;
+using DAL.Repositories;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace BLL.Services
 {
-    internal class Class1
+    public class EmployeeService
     {
+        private EmployeeRepository repository = new EmployeeRepository();
+
+        public void AddEmployee(Employee employee) => repository.AddEmployee(employee);
+
+        public List<Employee> GetAllEmployees() => repository.GetAllEmployees();
+
+        public Employee GetEmployeeById(int id)
+            => repository.GetAllEmployees().FirstOrDefault(e => e.Id == id);
     }
 }
