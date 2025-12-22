@@ -15,5 +15,18 @@ namespace BLL.Services
 
         public Employee? GetEmployeeById(int id)
             => repository.GetAllEmployees().FirstOrDefault(e => e.Id == id);
+
+
+        // Нові методи через сервіс
+
+        public Employee? GetEmployeeByName(string name)
+        {
+            return repository.GetEmployeeByName(name);
+        }
+
+        public List<string> GetAllPositions()
+        {
+            return repository.GetAllPositions();
+        }
     }
 }

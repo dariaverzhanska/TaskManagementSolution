@@ -19,5 +19,18 @@ namespace BLL.Services
 
         public List<MyTask> GetTasksByEmployee(int employeeId)
             => repository.GetAllTasks().Where(t => t.AssignedTo == employeeId).ToList();
+
+
+        // Нові методи через сервіс
+
+        public List<MyTask> GetTasksByStatus(string status)
+        {
+            return repository.GetTasksByStatus(status);
+        }
+
+        public List<MyTask> GetTasksByTitle(string keyword)
+        {
+            return repository.GetTasksByTitle(keyword);
+        }
     }
 }

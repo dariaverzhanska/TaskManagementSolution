@@ -1,4 +1,6 @@
 ﻿using DAL.Entities;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DAL.Repositories
 {
@@ -26,6 +28,19 @@ namespace DAL.Repositories
         {
             var task = tasks.FirstOrDefault(t => t.Id == id);
             if (task != null) tasks.Remove(task);
+        }
+
+        
+        // Нові методи для пошуку/фільтрації
+
+        public List<MyTask> GetTasksByStatus(string status)
+        {
+            return tasks.Where(t => t.Status == status).ToList();
+        }
+
+        public List<MyTask> GetTasksByTitle(string keyword)
+        {
+            return tasks.Where(t => t.Title.Contains(keyword)).ToList();
         }
     }
 }
