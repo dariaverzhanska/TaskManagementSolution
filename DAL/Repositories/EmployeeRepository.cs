@@ -27,5 +27,16 @@ namespace DAL.Repositories
             var employee = employees.FirstOrDefault(e => e.Id == id);
             if (employee != null) employees.Remove(employee);
         }
+
+      
+        public Employee? GetEmployeeByName(string name)
+        {
+            return employees.FirstOrDefault(e => e.Name == name);
+        }
+
+        public List<string> GetAllPositions()
+        {
+            return employees.Select(e => e.Position).Distinct().ToList();
+        }
     }
 }
